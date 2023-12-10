@@ -529,3 +529,19 @@ acc++
   
 //   return typeof str === 'string' ? res : 'Input is not a string'
 // }
+
+function sumOfRow(N) {
+  // Вычисляем первый и последний член строки
+  const a1 = (N * (N - 1)) / 2 + 1;
+  const an = (N * (N + 1)) / 2;
+
+  // вычисляем сумму арифметической прогрессии
+  const sum = (N / 2) * (a1 + an);
+
+  return sum;
+}
+
+
+const N = 4;
+const result = sumOfRow(N);
+console.log(result);
