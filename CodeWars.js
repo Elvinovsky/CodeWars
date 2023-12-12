@@ -558,44 +558,60 @@
 // const N = 4;
 // const result = sumOfRow(N);
 // console.log(result);
+//
+// const prizeCounter = (s) => {
+//   const prizeCondition = {
+//     R: false,
+//     B: false,
+//     G: false,
+//   };
+//
+//   let lastThreeHoops = '';
+//   let counter = 0;
+//
+//   for (let i = 0; i < s.length; i++) {
+//     const hoop = s[i];
+//     lastThreeHoops = (lastThreeHoops + hoop).slice(-3);
+//
+//     if (!prizeCondition[hoop]) {
+//       if (lastThreeHoops === 'RRR') {
+//         prizeCondition['R'] = true;
+//         prizeCondition['B'] = false;
+//         prizeCondition['G'] = false;
+//         counter += 500;
+//       } else if (lastThreeHoops === 'BBB') {
+//         prizeCondition['B'] = true;
+//         prizeCondition['R'] = false;
+//         prizeCondition['G'] = false;
+//         counter += 300;
+//       } else if (lastThreeHoops === 'GGG') {
+//         prizeCondition['R'] = false;
+//         prizeCondition['B'] = false;
+//         prizeCondition['G'] = true;
+//         counter += 200;
+//       }
+//
+//       counter += 100;
+//     }
+//   }
+//
+//   return counter;
+// };
+//
+// prizeCounter(['R', 'R', 'R', 'R']); // Вывод: 800
 
-const prizeCounter = (s) => {
-  const prizeCondition = {
-    R: false,
-    B: false,
-    G: false,
-  };
-
-  let lastThreeHoops = '';
-  let counter = 0;
-
-  for (let i = 0; i < s.length; i++) {
-    const hoop = s[i];
-    lastThreeHoops = (lastThreeHoops + hoop).slice(-3);
-
-    if (!prizeCondition[hoop]) {
-      if (lastThreeHoops === 'RRR') {
-        prizeCondition['R'] = true;
-        prizeCondition['B'] = false;
-        prizeCondition['G'] = false;
-        counter += 500;
-      } else if (lastThreeHoops === 'BBB') {
-        prizeCondition['B'] = true;
-        prizeCondition['R'] = false;
-        prizeCondition['G'] = false;
-        counter += 300;
-      } else if (lastThreeHoops === 'GGG') {
-        prizeCondition['R'] = false;
-        prizeCondition['B'] = false;
-        prizeCondition['G'] = true;
-        counter += 200;
-      }
-
-      counter += 100;
-    }
-  }
-
-  return counter;
-};
-
-prizeCounter(['R', 'R', 'R', 'R']); // Вывод: 800
+// var uniqueInOrder = function (iterable) {
+//   const result = [];
+//   let previousElement = undefined;
+//
+//   for (const currentElement of iterable) {
+//     if (currentElement !== previousElement) {
+//       result.push(currentElement);
+//       previousElement = currentElement;
+//     }
+//   }
+//
+//   return result;
+// };
+//
+// console.log(uniqueInOrder('aaaaBbaBbCCcCcCCGaff11f')); // ['a', 'B', 'b', 'a','B', 'b', 'C', 'c','C', 'c', 'C', 'G','a', 'f', '1', 'f']
