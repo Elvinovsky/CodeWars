@@ -615,38 +615,58 @@
 // };
 //
 // console.log(uniqueInOrder('aaaaBbaBbCCcCcCCGaff11f')); // ['a', 'B', 'b', 'a','B', 'b', 'C', 'c','C', 'c', 'C', 'G','a', 'f', '1', 'f']
+//
+// const arrayExtensions = {
+//   square: function () {
+//     return this.map((num) => num ** 2);
+//   },
+//   cube: function () {
+//     return this.map((num) => num ** 3);
+//   },
+//   average: function () {
+//     return this.length === 0
+//       ? NaN
+//       : this.reduce((acc, num) => acc + num, 0) / this.length;
+//   },
+//   sum: function () {
+//     return this.reduce((acc, num) => acc + num, 0);
+//   },
+//   even: function () {
+//     return this.filter((num) => num % 2 === 0);
+//   },
+//   odd: function () {
+//     return this.filter((num) => num % 2 !== 0);
+//   },
+// };
+//
+// // Расширяем прототип Array с использованием Object.assign
+// Object.assign(Array.prototype, arrayExtensions);
+//
+// const myArray = [1, 2, 3, 4, 5];
+//
+// console.log(myArray.square()); // [1, 4, 9, 16, 25]
+// console.log(myArray.cube()); // [1, 8, 27, 64, 125]
+// console.log(myArray.average()); // 3
+// console.log(myArray.sum()); // 15
+// console.log(myArray.even()); // [2, 4]
+// console.log(myArray.odd()); // [1, 3, 5]
 
-const arrayExtensions = {
-  square: function () {
-    return this.map((num) => num ** 2);
-  },
-  cube: function () {
-    return this.map((num) => num ** 3);
-  },
-  average: function () {
-    return this.length === 0
-      ? NaN
-      : this.reduce((acc, num) => acc + num, 0) / this.length;
-  },
-  sum: function () {
-    return this.reduce((acc, num) => acc + num, 0);
-  },
-  even: function () {
-    return this.filter((num) => num % 2 === 0);
-  },
-  odd: function () {
-    return this.filter((num) => num % 2 !== 0);
-  },
-};
+function findUniq(arr) {
+  const firstNumber = arr[0];
+  const secondNumber = arr[1];
+  const thirdNumber = arr[2];
 
-// Расширяем прототип Array с использованием Object.assign
-Object.assign(Array.prototype, arrayExtensions);
+  // пограничное условие
+  if (firstNumber !== secondNumber && secondNumber === thirdNumber) {
+    return firstNumber;
+  }
 
-const myArray = [1, 2, 3, 4, 5];
+  // ищем уникальное число в массиве
+  for (let currentNumber of arr) {
+    if (currentNumber !== firstNumber) {
+      return currentNumber;
+    }
+  }
 
-console.log(myArray.square()); // [1, 4, 9, 16, 25]
-console.log(myArray.cube()); // [1, 8, 27, 64, 125]
-console.log(myArray.average()); // 3
-console.log(myArray.sum()); // 15
-console.log(myArray.even()); // [2, 4]
-console.log(myArray.odd()); // [1, 3, 5]
+  return null; // Уникальное число не найдено
+}
