@@ -650,23 +650,61 @@
 // console.log(myArray.sum()); // 15
 // console.log(myArray.even()); // [2, 4]
 // console.log(myArray.odd()); // [1, 3, 5]
-
-function findUniq(arr) {
-  const firstNumber = arr[0];
-  const secondNumber = arr[1];
-  const thirdNumber = arr[2];
-
-  // пограничное условие
-  if (firstNumber !== secondNumber && secondNumber === thirdNumber) {
-    return firstNumber;
-  }
-
-  // ищем уникальное число в массиве
-  for (let currentNumber of arr) {
-    if (currentNumber !== firstNumber) {
-      return currentNumber;
-    }
-  }
-
-  return null; // Уникальное число не найдено
-}
+//
+// function findUniq(arr) {
+//   const firstNumber = arr[0];
+//   const secondNumber = arr[1];
+//   const thirdNumber = arr[2];
+//
+//   // пограничное условие
+//   if (firstNumber !== secondNumber && secondNumber === thirdNumber) {
+//     return firstNumber;
+//   }
+//
+//   // ищем уникальное число в массиве
+//   for (let currentNumber of arr) {
+//     if (currentNumber !== firstNumber) {
+//       return currentNumber;
+//     }
+//   }
+//
+//   return null; // Уникальное число не найдено
+// }
+//
+// const array = [10, 2, 4, 3, 10]
+// const sortNumbers = (arr) => {
+//   const result = [arr[0]];
+//
+//   for (let currentNumber of arr.slice(1)) {
+//     let index = result.length - 1;
+//
+//     while (index >= 0 && result[index] > currentNumber) {
+//       result[index + 1] = result[index];
+//       index--;
+//     }
+//
+//     result[index + 1] = currentNumber;
+//   }
+//
+//   return result;
+// }
+//
+// console.log(sortNumbers(array));
+//
+// let runLengthEncoding = function(str) {
+//   const result = [];
+//   let count = 1;
+//   let currentChar = str[0];
+//
+//   for (let i = 1; i <= str.length; i++) {
+//     if (str[i] === currentChar) {
+//       count++;
+//     } else {
+//       result.push([count, currentChar]);
+//       count = 1;
+//       currentChar = str[i];
+//     }
+//   }
+//
+//   return result;
+// }
