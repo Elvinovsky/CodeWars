@@ -708,3 +708,32 @@
 //
 //   return result;
 // }
+
+// function moveLastElement(array) {
+//   const lastElement = array[array.length - 1];
+//   for (let i = array.length - 1; i > 0; i--) {
+//     array[i] = lastElement;
+//     array[i] = array[i - 1];
+//   }
+//   array[0] = lastElement;
+// }
+// moveLastElement (array)
+// console.log(array)
+
+// const array = [
+//   22, 23, 22, 33, 1, 2, 1, 10, 11, 3, 5, 4, 5, 6, 5, 7, 4, 5, 6, 7, 8, 9, 6, 7,
+// ];
+//
+// function injectionSort(array) {
+//   for (let i = 1; i < array.length; i++) {
+//     let currentElement = array[i];
+//     for (let j = i - 1; j >= 0 && array[j] > currentElement; j--) {
+//       array[j + 1] = array[j];
+//       array[j] = currentElement;
+//     }
+//   }
+// }
+//
+// injectionSort(array);
+// console.log(array);
+
