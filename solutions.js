@@ -719,21 +719,107 @@
 // }
 // moveLastElement (array)
 // console.log(array)
-
+//
 // const array = [
 //   22, 23, 22, 33, 1, 2, 1, 10, 11, 3, 5, 4, 5, 6, 5, 7, 4, 5, 6, 7, 8, 9, 6, 7,
 // ];
 //
 // function injectionSort(array) {
+//     let count = 0;
 //   for (let i = 1; i < array.length; i++) {
+//       count++
 //     let currentElement = array[i];
 //     for (let j = i - 1; j >= 0 && array[j] > currentElement; j--) {
+//         count++
 //       array[j + 1] = array[j];
 //       array[j] = currentElement;
 //     }
 //   }
+//   return count
 // }
 //
 // injectionSort(array);
-// console.log(array);
+// console.log(array, injectionSort(array));
+//
+// function sortBubbleAlgorithm(array) {
+//   let count = 0;
+//   let isSwapped = false
+//
+//   for (let i = 0; i < array.length; i++) {
+//     count++;
+//       isSwapped = false
+//     for (let j = 0; j < (array.length - i - 1); j++) {
+//       count++;
+//       if (array[j] > array[j + 1]) {
+//         const temp = array[j];
+//         array[j] = array[j + 1];
+//         array[j + 1] = temp;
+//         isSwapped = true
+//       }
+//
+//     }
+//       if(!isSwapped) break
+//   }
+//   return count;
+// }
+//
+// sortBubbleAlgorithm(array);
+//
+// console.log(array, sortBubbleAlgorithm(array));
+//
+// let array = [
+//   { id: 0, name: 'Eva' },
+//   { id: 1, name: 'Julia3' },
+//   { id: 2, name: 'Charlie' },
+//   { id: 3, name: 'Charlie' },
+//   { id: 4, name: 'Charlie4' },
+//   { id: 5, name: 'Fiona' },
+//   { id: 6, name: 'Julia2' },
+//   { id: 7, name: 'Bob' },
+//   { id: 8, name: 'Alice' },
+//   { id: 9, name: 'Eva2' },
+// ];
 
+// function binarySearch(array, searchId) {
+//     let middleElement;
+//     let count = 0;
+//
+//   while (array.length > 1) {
+//     let middleIndex = Math.floor(array.length / 2);
+//     middleElement = array[middleIndex];
+//     count++;
+//
+//     if (searchId === middleElement.id) {
+//         return [middleElement, count];
+//     }
+//     if (array.length === 1) {
+//         return -1;
+//     }
+//     else if (searchId > middleElement.id) {
+//          array.splice(0, middleIndex);
+//
+//     } else
+//      array.splice( middleIndex);
+//   }
+//   return -1
+// }
+//
+// function binarySearch(array, searchId) {
+//   let start = 0;
+//   let end = array.length - 1;
+//
+//   while (start <= end) {
+//     let middleIndex = Math.floor((end + start) / 2);
+//     let middleElement = array[middleIndex];
+//
+//     if (searchId === middleElement?.id) {
+//       return middleElement;
+//     } else if (searchId < middleElement?.id) {
+//       end = middleIndex - 1;
+//     } else start = middleIndex + 1;
+//   }
+//   return -1;
+// }
+//
+// console.log(binarySearch(array, 4));
+// console.log(array);
